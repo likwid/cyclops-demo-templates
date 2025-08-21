@@ -1,5 +1,5 @@
 ---
-{{- if .Values.ingres }}
+{{- if .Values.ingress }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
