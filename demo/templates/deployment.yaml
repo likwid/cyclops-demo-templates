@@ -18,5 +18,5 @@ spec:
       - image: "{{ .Values.image -}}:{{ .Values.version }}"
         name: {{ .Values.name }}
         ports:
-        - containerPort: {{ quote .Values.containerPort }}
+        - containerPort: {{ .Values.containerPort }}
           name: http
