@@ -2,25 +2,25 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ .Values.name }}
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/security-groups: sg-02d8c5d08a81f5965
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
-    external-dns.alpha.kubernetes.io/hostname: {{ .Release.Name }}.demo.platform.np.cadsmodelops.com
+    external-dns.alpha.kubernetes.io/hostname: {{ .Values.name }}.demo.platform.np.cadsmodelops.com
     external-dns.alpha.kubernetes.io/ttl: 30s
 spec:
   ingressClassName: alb
   rules:
-  - host: {{ .Release.Name }}.demo.platform.np.cadsmodelops.com
+  - host: {{ .Values.name }}.demo.platform.np.cadsmodelops.com
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: {{ .Release.Name }}
+            name: {{ .Values.name }}
             port:
               number: 80
 {{- end }}
