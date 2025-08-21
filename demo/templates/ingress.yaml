@@ -10,6 +10,7 @@ metadata:
     alb.ingress.kubernetes.io/security-groups: sg-02d8c5d08a81f5965
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     external-dns.alpha.kubernetes.io/hostname: {{ .Release.Name }}.demo.platform.np.cadsmodelops.com
+    external-dns.alpha.kubernetes.io/ttl: 30
 spec:
   ingressClassName: alb
   rules:
