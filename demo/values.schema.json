@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "global": {
+      "description": "Global values are values that can be accessed from any chart or subchart by exactly the same name.",
+      "required": [],
+      "title": "global",
+      "type": "object"
+    },
+    "image": {
+      "default": "nginx",
+      "required": [],
+      "title": "image",
+      "type": "string"
+    },
+    "ingress": {
+      "default": true,
+      "required": [],
+      "title": "ingress",
+      "type": "boolean"
+    },
+    "name": {
+      "default": "demo-app",
+      "required": [],
+      "title": "name",
+      "type": "string"
+    },
+    "replicas": {
+      "default": 1,
+      "required": [],
+      "title": "replicas",
+      "type": "integer"
+    },
+    "service": {
+      "default": true,
+      "required": [],
+      "title": "service",
+      "type": "boolean"
+    },
+    "version": {
+      "default": "1.14.2",
+      "required": [],
+      "title": "version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "image",
+    "name",
+    "replicas",
+    "service",
+    "ingress",
+    "version"
+  ],
+  "type": "object"
+}
